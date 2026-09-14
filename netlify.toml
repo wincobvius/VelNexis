@@ -1,0 +1,35 @@
+[build]
+  command = "python3 build.py"
+  publish = "."
+
+# ------------------------------------------------------------
+# Site sab crawlers (Googlebot, Bingbot, SEO tools) ke liye
+# khuli hai — koi bot-blocking rule nahi. Ye headers sirf
+# security + speed ke liye hain:
+# ------------------------------------------------------------
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# CSS — har build pe badal sakta hai, is liye chhoti cache
+[[headers]]
+  for = "/assets/site.css"
+  [headers.values]
+    Cache-Control = "public, max-age=600"
+
+# Fonts — kabhi nahi badalte: 1 saal
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Photos — stable: 1 saal browser cache = tez site
+[[headers]]
+  for = "/assets/uploads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disclaimer — VelNexis</title>
+<link rel="canonical" href="https://velnexis.netlify.app/disclaimer.html">
+<meta name="description" content="Disclaimer: general information and advice notice.">
+<link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/newsreader-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="google-site-verification" content="2Uxh3ESC40aQh-Os3qW8hIhYUzSby7SwYoAixbw9bbo">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<meta property="og:title" content="Disclaimer — VelNexis">
+<meta property="og:description" content="Disclaimer: general information and advice notice.">
+<meta property="og:site_name" content="VelNexis">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://velnexis.netlify.app/assets/uploads/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://velnexis.netlify.app/"}, {"@type": "ListItem", "position": 2, "name": "Disclaimer"}]}]}</script>
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+<a href="index.html" class="logo">VelNexis</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Home</a></li>
+<li><a href="categories.html">Categories</a></li>
+<li><a href="search.html" class="snav">&#128269; Search</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="privacy.html" class="on">Privacy Policy</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<button class="burger" id="burger" aria-label="Menu">☰</button>
+</div></nav>
+<div class="phero"><div class="wrap"><h1><span class=\'gt\'>Disclaimer</span></h1><p>Last updated: September 2026</p></div></div>
+<div class="prose"><h2 class="first">General Information</h2>
+<p>All content on VelNexis is published in good faith and for general information purposes only. While we check our facts, we make no warranty of completeness, accuracy or reliability.</p>
+<h2>Professional Advice</h2>
+<p>Nothing on this site constitutes professional, financial, legal or security advice. Actions taken based on our content are strictly at your own risk.</p>
+<h2>Tech Fixes & Guides</h2>
+<p>Always create backups before applying any system changes (registry edits, settings, updates). We are not responsible for data loss or device issues.</p>
+<h2>Affiliate & Advertising</h2>
+<p>This site may display advertisements and may include affiliate links in the future. This never influences our reviews or verdicts — independence comes first.</p>
+<h2>Consent</h2>
+<p>By using our website, you hereby consent to this disclaimer and agree to its terms.</p></div>
+<footer><div class="wrap"><div class="fgrid">
+<div>
+<a href="index.html" class="logo flogo">VelNexis</a>
+<p class="mut ftag">The nexus of tech truth, tips and trends. Rumors challenged, fixes that work, zero fluff — built for readers first.</p>
+<p class="mut fcontact">📧 <a class="gold" data-em="c2ltcGxhbm9ueW1vdXMzMUBnbWFpbC5jb20=" href="contact.html">Email us</a><br>📍 Rawalpindi, Punjab, Pakistan</p>
+</div>
+<div><h3 class="fh">Categories</h3><ul><li><a href="category-ai.html">AI & Rumor Checks</a></li><li><a href="category-android.html">Android Issues</a></li><li><a href="category-browser.html">Browser Problems</a></li><li><a href="category-buying.html">Buying Guides</a></li><li><a href="category-camera.html">Camera & Photos</a></li><li><a href="category-cloud.html">Cloud Storage</a></li><li><a href="categories.html">All categories →</a></li></ul></div>
+<div><h3 class="fh">Pages</h3><ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li><a href="categories.html">Categories</a></li>
+<li><a href="search.html">Search</a></li>
+</ul></div>
+<div><h3 class="fh">Legal</h3><ul>
+<li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms &amp; Conditions</a></li>
+<li><a href="disclaimer.html">Disclaimer</a></li><li><a href="editorial-policy.html">Editorial Policy</a></li>
+</ul></div>
+</div>
+<div class="fbot"><span>© <span id="yr"></span> VelNexis. All rights reserved · Content updated September 2026</span><span>Made with care for tech lovers</span></div>
+</div></footer>
+<div id="toast" role="status"></div>
+<script>
+var b=document.getElementById("burger"),n=document.getElementById("navLinks");
+b&&b.addEventListener("click",()=>n.classList.toggle("open"));
+var y=document.getElementById("yr");if(y)y.textContent=new Date().getFullYear();
+document.querySelectorAll("[data-em]").forEach(function(el){try{var e=atob(el.getAttribute("data-em"));el.textContent=e;el.setAttribute("href","mailto:"+e)}catch(err){}});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll("[data-rev]").forEach(function(el){io.observe(el)});
+function toast(m,ok){var t=document.getElementById("toast");t.innerHTML='<span class="toastdot '+(ok!==false?"ok":"err")+'"></span>'+m;t.classList.add("show");clearTimeout(t._x);t._x=setTimeout(function(){t.classList.remove("show")},3400)}
+</script>
+</body>
+</html>

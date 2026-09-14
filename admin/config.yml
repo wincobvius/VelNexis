@@ -1,0 +1,119 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: assets/uploads
+public_folder: assets/uploads
+
+collections:
+  # ---------------- ARTICLES ----------------
+  - name: articles
+    label: 📝 Articles
+    label_singular: Article
+    folder: content/articles
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: [date, title]
+    summary: "{{title}} — {{cat}}"
+    fields:
+      - {label: "Title (article ka naam)", name: title, widget: string}
+      - {label: "Category", name: cat, widget: select, options: [ai, gaming, windows, android, security, news, internet, iphone, browser, smarttv, camera, gmail, whatsapp, recovery, cloud, payments, earning, software, printer, buying]}
+      - {label: "Icon (emoji)", name: icon, widget: string, default: "📄"}
+      - {label: "Photo (article ki tasveer)", name: image, widget: image, required: false, hint: "Article ki hero photo. Khali chhodna theek hai — pehle se lagi hui rahegi jab tak badli na jaye."}
+      - {label: "Date", name: date, widget: datetime, date_format: "MMM D, YYYY", time_format: false, format: "MMM D, YYYY"}
+      - {label: "Reading time (minutes)", name: mins, widget: number, default: 5, min: 1, max: 90}
+      - {label: "Excerpt (cards pe wali 1-2 line)", name: excerpt, widget: text, required: false}
+      - {label: "Article body", name: body, widget: markdown, hint: "## Bara heading | ### Chhota | - bullet | **bold** | *italic* | Q:/A: FAQ box"}
+
+  # ---------------- CATEGORIES ----------------
+  - name: categories
+    label: 📚 Categories
+    label_singular: Category
+    folder: content/categories
+    create: true
+    slug: "{{name}}"
+    identifier_field: name
+    summary: "{{name}} ({{rating}}★)"
+    fields:
+      - {label: "Name", name: name, widget: string}
+      - {label: "Icon (emoji)", name: icon, widget: string, default: "📄"}
+      - {label: "Color (hex)", name: color, widget: string, default: "#A78BFA"}
+      - {label: "Description", name: desc, widget: text}
+      - {label: "Section intro (category page pe neeche likha jayega)", name: intro, widget: text, required: false, hint: "120-200 words — section kya cover karta hai"}
+      - {label: "Rating (1.0 - 5.0)", name: rating, widget: number, default: 4.5, min: 1, max: 5, step: 0.1}
+      - {label: "Verdict (editor ki ray — review box)", name: verdict, widget: text}
+      - {label: "Pros (review box — achhi baatein)", name: pros, widget: list, allow_add: true, default: [""]}
+      - {label: "Cons (review box — kamiyan)", name: cons, widget: list, allow_add: true, default: [""]}
+
+  # ---------------- PAGES ----------------
+  - name: pages
+    label: 📄 Pages
+    files:
+      - label: "About Us"
+        name: about
+        file: content/pages/about.md
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown, hint: "((stats)) aur ((team)) ki jagah dashboard khud lagega"}
+      - label: "Author (Abdul Rafay)"
+        name: author
+        file: content/pages/author.md
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown, hint: "Author page ka text — naam, background, experience"}
+      - label: "Privacy Policy"
+        name: privacy
+        file: content/pages/privacy.md
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
+      - label: "Terms & Conditions"
+        name: terms
+        file: content/pages/terms.md
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
+      - label: "Disclaimer"
+        name: disclaimer
+        file: content/pages/disclaimer.md
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
+      - label: "Editorial Policy"
+        name: editorial-policy
+        file: content/pages/editorial-policy.md
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
+
+  # ---------------- SETTINGS ----------------
+  - name: settings
+    label: ⚙️ Site Settings
+    files:
+      - label: "Main Settings"
+        name: main
+        file: content/settings.yml
+        fields:
+          - {label: "Site name", name: site_name, widget: string}
+          - {label: "Site URL (domain lagne ke baad yahan naya URL likhna)", name: site_url, widget: string, hint: "Abhi https://velnexis.netlify.app hai. Apna domain attach karne ke baad isay https://velnexis.com bana dena — canonical, sitemap sab khud theek ho jayenge."}
+          - {label: "Tagline", name: tagline, widget: string}
+          - {label: "Hero heading (pehla hissa)", name: hero_heading, widget: string}
+          - {label: "Hero accent (purple wala hissa)", name: hero_accent, widget: string}
+          - {label: "Hero paragraph (italic wali line)", name: hero_paragraph, widget: text}
+          - {label: "Footer tagline", name: footer_tagline, widget: text}
+          - {label: "Contact email", name: contact_email, widget: string}
+          - {label: "Postal address (footer mein dikhta hai)", name: postal_address, widget: string}
+          - {label: "Analytics ID (GA4/pixel — abhi khali rakho, SDK khud nahi lagta)", name: analytics_id, widget: string, default: ""}
+          - {label: "Contact response time", name: contact_response, widget: string}
+          - {label: "Trust 1 — icon", name: trust1_icon, widget: string, default: "✅"}
+          - {label: "Trust 1 — title", name: trust1_title, widget: string}
+          - {label: "Trust 1 — text", name: trust1_text, widget: text}
+          - {label: "Trust 2 — icon", name: trust2_icon, widget: string, default: "🚫"}
+          - {label: "Trust 2 — title", name: trust2_title, widget: string}
+          - {label: "Trust 2 — text", name: trust2_text, widget: text}
+          - {label: "Trust 3 — icon", name: trust3_icon, widget: string, default: "🔄"}
+          - {label: "Trust 3 — title", name: trust3_title, widget: string}
+          - {label: "Trust 3 — text", name: trust3_text, widget: text}
+          - {label: "Trust 4 — icon", name: trust4_icon, widget: string, default: "🛡️"}
+          - {label: "Trust 4 — title", name: trust4_title, widget: string}
+          - {label: "Trust 4 — text", name: trust4_text, widget: text}
